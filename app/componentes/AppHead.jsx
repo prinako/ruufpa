@@ -28,7 +28,7 @@ const styles = StyleSheet.create({
     justifyContent: "space-around",
     alignItems: "center",
     width: "100%",
-    height: 80,
+    height: 70,
   },
   image: {
     width: 60,

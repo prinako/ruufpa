@@ -4,7 +4,7 @@ import { Text, View, StyleSheet, Image } from "react-native";
 function CartaoDeCardapio() {
   return (
     <View style={styles.container}>
-      <Image style={styles.image} source={require("../assets/comida1.jpg")} />
+      <Image style={styles.image} source={require("../imagems/comida1.jpg")} />
       <View style={styles.text_container}>
         <View style={styles.titilo_do_cardapio}>
           <Text style={{ fontWeight: "bold" }}>LINGUIÇA ASSADA</Text>
@@ -24,7 +24,7 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: "row",
     backgroundColor: "#F3F4ED",
-    height: 170,
+    height: 120,
     borderRadius: 5,
     marginTop: 10,
     marginBottom: 10,
