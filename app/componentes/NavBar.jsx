@@ -1,20 +1,18 @@
 import React from "react";
-import { View, StyleSheet, Button, TouchableOpacity, Text } from "react-native";
+import {
+  View,
+  StyleSheet,
+  Alert,
+} from "react-native";
+
+import Botao from "./Botao";
 
 function NavBar() {
   return (
     <View style={styles.container}>
-      <TouchableOpacity style={styles.button}>
-        <Text>hi</Text>
-      </TouchableOpacity>
-
-      <TouchableOpacity style={styles.button}>
-        <Text>hi</Text>
-      </TouchableOpacity>
-
-      <TouchableOpacity style={styles.button}>
-        <Text>hi</Text>
-      </TouchableOpacity>
+      <Botao name="menu" onPress={() => Alert.alert("Botão de Menu")}/>
+      <Botao name="search" onPress={() => Alert.alert("Botão de Pesquisas")} />
+      <Botao name="map" onPress={() => Alert.alert("Botão de Map")} />
     </View>
   );
 }
@@ -29,14 +27,6 @@ const styles = StyleSheet.create({
     width: "100%",
     paddingTop: 10,
     paddingBottom: 10,
-  },
-  button: {
-    backgroundColor: "#fff",
-    justifyContent: "center",
-    alignItems: "center",
-    fontSize: 50,
-    width: 70,
-    borderRadius: 10,
   },
 });
 

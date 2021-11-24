@@ -1,14 +1,14 @@
 {
   "expo": {
-    "name": "re_ufpa",
-    "slug": "re_ufpa",
+    "name": "RU  DIGITAL",
+    "slug": "ru-digital",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./app/assets/icon.png",
+    "icon": "./app/assets/ru_logo.png",
     "splash": {
-      "image": "./app/assets/splash.png",
+      "image": "./app/assets/ru_logo.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#FFCC1D"
     },
     "updates": {
       "fallbackToCacheTimeout": 0
@@ -27,6 +27,9 @@
     },
     "web": {
       "favicon": "./app/assets/favicon.png"
-    }
+    },
+    "owner": "ru_digital",
+    "description": "O aplicativo vem com funcionalidades novas e atualizado para trazer maior conforto aos universitários. Além de trazer comodidade e  informações- como cardápio semana e horários de funcionamento, o nosso aplicativo tem o intuito de dinamizar o atendimento do RU.​",
+    "githubUrl": "https://github.com/prinako/ruufpa.git"
   }
 }
