@@ -9,11 +9,13 @@ function CartaoDeCardapio() {
         <View style={styles.titilo_do_cardapio}>
           <Text style={{ fontWeight: "bold" }}>LINGUIÇA ASSADA</Text>
         </View>
-        <Text>ARROZ BRANCO</Text>
-        <Text>FEIJÃO COM ABÓBORA E REPOLHO</Text>
-        <Text>FAROFA</Text>
-        <Text>CENOURA A VICK</Text>
-        <Text>LARANJA</Text>
+        <View style={{height:"100%"}}>
+          <Text>ARROZ BRANCO</Text>
+          <Text>FEIJÃO COM ABÓBORA E REPOLHO</Text>
+          <Text>FAROFA</Text>
+          <Text>CENOURA A VICK</Text>
+          <Text>LARANJA</Text>
+        </View>
       </View>
     </View>
   );
@@ -28,7 +30,6 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     marginTop: 10,
     marginBottom: 10,
-    overflow: "hidden",
   },
   image: {
     width: "40%",

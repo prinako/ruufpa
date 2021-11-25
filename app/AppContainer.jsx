@@ -1,5 +1,5 @@
 import React from "react";
-import { Text, StyleSheet, SafeAreaView, View, StatusBar} from "react-native";
+import { StyleSheet, View, StatusBar} from "react-native";
 
 import AppHead from "./componentes/AppHead";
 import Dashboard from "./componentes/Dashboard";
@@ -19,6 +19,5 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
-
   },
 });
