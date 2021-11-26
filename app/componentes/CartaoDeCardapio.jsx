@@ -1,52 +1,40 @@
 import React from "react";
-import { Text, View, StyleSheet, Image } from "react-native";
+import { View, StyleSheet, Text } from "react-native";
 
-function CartaoDeCardapio() {
+import TipoDeComida from "./TipoDeComida";
+
+export default function CartaoDeCardapio(props) {
+  const { periodo } = props;
+
   return (
     <View style={styles.container}>
-      <Image style={styles.image} source={require("../imagems/comida1.jpg")} />
       <View style={styles.text_container}>
-        <View style={styles.titilo_do_cardapio}>
-          <Text style={{ fontWeight: "bold" }}>LINGUIÇA ASSADA</Text>
-        </View>
-        <View style={{height:"100%"}}>
-          <Text>ARROZ BRANCO</Text>
-          <Text>FEIJÃO COM ABÓBORA E REPOLHO</Text>
-          <Text>FAROFA</Text>
-          <Text>CENOURA A VICK</Text>
-          <Text>LARANJA</Text>
-        </View>
+        <Text style={styles.text}>{periodo}</Text>
       </View>
+      <TipoDeComida />
+      <TipoDeComida />
     </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    flexDirection: "row",
-    backgroundColor: "#F3F4ED",
-    height: 120,
-    borderRadius: 5,
-    marginTop: 10,
+    backgroundColor: "#fff",
+    paddingTop: 20,
+    paddingBottom: 10,
+    paddingLeft: 5,
+    paddingRight: 5,
+    borderTopLeftRadius: 20,
+    borderTopRightRadius: 20,
+    borderBottomLeftRadius: 20,
+    borderBottomRightRadius: 20,
     marginBottom: 10,
-  },
-  image: {
-    width: "40%",
-    height: "100%",
-    borderRadius: 10,
   },
   text_container: {
-    backgroundColor: "#fffc",
-    paddingLeft: 15,
-    flex: 1,
-  },
-  titilo_do_cardapio: {
-    justifyContent: "center",
     alignItems: "center",
-    height: 20,
-    marginBottom: 10,
+  },
+  text: {
+    fontWeight: "700",
+    fontSize: 20,
   },
 });
-
-export default CartaoDeCardapio;
