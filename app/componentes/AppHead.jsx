@@ -28,16 +28,16 @@ const styles = StyleSheet.create({
     justifyContent: "space-around",
     alignItems: "center",
     width: "100%",
-    height: 70,
+    height: 50,
   },
   image: {
-    width: 60,
-    height: 60,
+    width: 40,
+    height: 40,
     borderRadius: 50,
   },
   text: {
     color: "#000",
-    fontSize: 30,
+    fontSize: 20,
     fontWeight: "bold",
   },
 });

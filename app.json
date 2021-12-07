@@ -23,7 +23,12 @@
       "adaptiveIcon": {
         "foregroundImage": "./app/assets/ru-digital-logo.png",
         "backgroundColor": "#FFCC1D"
-      }
+      },
+      "permissions": [
+        "ACCESS_COARSE_LOCATION",
+        "ACCESS_FINE_LOCATION",
+        "ACESS_BACKGROUND_LOCATION"
+      ]
     },
     "web": {
       "favicon": "./app/assets/ru-digital-logo.png"
