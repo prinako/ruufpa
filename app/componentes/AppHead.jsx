@@ -12,7 +12,7 @@ function AppHead() {
   return (
     <View style={styles.container}>
       <Image style={styles.image} source={require("../assets/logo-ru.jpg")} />
-      <Text style={styles.text}>RU UFPA</Text>
+      <Text style={styles.text}>RU DIGITAL</Text>
       <Image style={styles.image} source={require("../assets/logo-ufpa.png")} />
     </View>
   );
