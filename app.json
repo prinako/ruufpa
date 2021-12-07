@@ -28,7 +28,8 @@
         "ACCESS_COARSE_LOCATION",
         "ACCESS_FINE_LOCATION",
         "ACESS_BACKGROUND_LOCATION"
-      ]
+      ],
+      "package": "com.ru_digital.rudigital"
     },
     "web": {
       "favicon": "./app/assets/ru-digital-logo.png"
