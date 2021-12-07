@@ -3,7 +3,10 @@ import { ScrollView, StyleSheet } from "react-native";
 
 import CartaoDeCardapio from "./CartaoDeCardapio";
 import Separator from "./Separator";
+
+
 function Dashboard() {
+
   return (
     <ScrollView style={styles.container}>
       <Separator dia="Hoje" />

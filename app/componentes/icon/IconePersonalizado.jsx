@@ -18,13 +18,13 @@ const styles = StyleSheet.create({
   container: {
     position: "absolute",
     borderRadius: 50,
-    left: "41.5%",
-    top: "-60%",
+    left: "46%",
+    top: "-30%",
     overflow: "hidden",
   },
   icon: {
     backgroundColor: "#FFCC1D",
-    width: 90,
-    height: 90,
+    width: 65,
+    height: 65,
   },
 });
