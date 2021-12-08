@@ -3,7 +3,7 @@ import * as Location from "expo-location";
 
 import MapView from "react-native-maps";
 import MapViewDirections from "react-native-maps-directions";
-import { View, StyleSheet, Dimensions } from "react-native";
+import { View, StyleSheet, Dimensions, Text } from "react-native";
 
 import GOOGLE_API_KEY from "../../config";
 
@@ -11,15 +11,15 @@ export default function Map() {
   const mapEL = useRef(null);
 
   const [localizacao, setLocalizacao] = useState(null);
+  const [erroMsg, setErrorMsg] = useState(null);
+  const [distancia, setDistancia] = useState(null);
 
-
-  const [destino, setDestino] = useState({
+  const destino = {
     latitude: -1.47779,
     longitude: -48.45812,
     latitudeDelta: 0.00922,
     longitudeDelta: 0.00421,
-  });
-  const [erroMsg, setErrorMsg] = useState(null);
+  };
 
   useEffect(() => {
     (async () => {
@@ -58,33 +58,40 @@ export default function Map() {
       >
         {localizacao && (
           <MapViewDirections
-            region={localizacao}
+            origin={localizacao}
             destination={destino}
-            apikey={GOOGLE_API_KEY.API2}
-            strokeWidth={3}
+            apikey={GOOGLE_API_KEY.API}
+            lineDashPattern={[0]}
+            resetOnChange={true}
+            strokeWidth={5}
+            optimizeWaypoints={true}
             language={"pt-br"}
             onReady={(resultado) => {
-              mapEL.current.fitToCoordinates(
-                resultado.cooedinates,{
-                  edgePadding:{
-                    top:50,
-                    bottom:50,
-                    left:50,
-                    right:50,
-                  }
-                }
-              )
-              console.log("dis" + " " + resultado);
+              setDistancia(resultado.distance);
+              mapEL.current.fitToCoordinates(resultado.coordinates, {
+                edgePadding: {
+                  top: 50,
+                  bottom: 50,
+                  left: 50,
+                  right: 50,
+                },
+              });
             }}
           />
         )}
       </MapView>
+      {distancia && (
+        <View style={styles.distan}>
+          <Text>Distância: {distancia}m</Text>
+        </View>
+      )}
     </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
+    position: "relative",
     flex: 1,
     backgroundColor: "#fff",
     alignItems: "center",
@@ -93,5 +100,14 @@ const styles = StyleSheet.create({
   map: {
     width: Dimensions.get("window").width,
     height: "100%",
+  },
+  distan: {
+    zIndex: 10,
+    position: "absolute",
+    bottom: 20,
+    right: 20,
+    backgroundColor: "#fff",
+    padding: 5,
+    borderRadius: 5,
   },
 });
