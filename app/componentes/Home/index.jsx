@@ -1,20 +1,15 @@
 import React, { useState } from "react";
 import { StyleSheet, View, StatusBar } from "react-native";
 
-import AppHead from "../componentes/AppHead/Head";
-import Dashboard from "../componentes/Dashboard";
-import NavBar from "../componentes/NavBar";
+import Head from "../AppHead/Head";
+import Dashboard from "../Dashboard";
+import NavBar from "../NavBar";
 
 export default function Home({navigation}) {
-  const [ mapa, setMapa ] = useState(false);
-
-  function controleMapa() {
-    setMapa((p)=> !p);
-  }
 
   return (
     <View style={styles.container}>
-      <AppHead />
+      <Head />
        <Dashboard />
       <NavBar onMapa={navigation} />
     </View>

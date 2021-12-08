@@ -4,12 +4,10 @@ import {
   Text,
   View,
   StyleSheet,
-  Platform,
-  StatusBar,
   Image,
 } from "react-native";
 
-function AppHead() {
+export default function Head() {
   return (
       <View style={styles.container}>
         <Image style={styles.image} source={require("../../assets/logo-ru.jpg")} />
@@ -44,4 +42,3 @@ const styles = StyleSheet.create({
   },
 });
 
-export default AppHead;

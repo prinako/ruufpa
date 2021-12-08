@@ -4,8 +4,7 @@ import { StyleSheet, StatusBar} from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
-import Home from "./app/Home";
-import AppHead from "./app/componentes/AppHead/Head";
+import Home from "./app/componentes/Home";
 import Map from "./app/componentes/mapa/Map";
 
 const Stack = createNativeStackNavigator();
