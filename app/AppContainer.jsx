@@ -15,9 +15,7 @@ export default function AppContainer() {
 
   return (
     <View style={styles.container}>
-      <AppHead />
       {mapa ? <Map/> : <Dashboard />}
-      <NavBar onMapa={controleMapa} />
     </View>
   );
 }

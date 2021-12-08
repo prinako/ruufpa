@@ -58,7 +58,7 @@ export default function Map() {
       >
         {localizacao && (
           <MapViewDirections
-            region={localizacao}
+            region={JSON.stringify(localizacao)}
             destination={destino}
             apikey={GOOGLE_API_KEY.API2}
             strokeWidth={3}

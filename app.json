@@ -2,7 +2,7 @@
   "expo": {
     "name": "RU  DIGITAL",
     "slug": "ru-digital",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "orientation": "portrait",
     "icon": "./app/assets/ru-digital-logo.png",
     "splash": {
