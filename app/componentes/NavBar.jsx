@@ -5,14 +5,14 @@ import Botao from "./Botao";
 import IconePersonalizado from "./icon/IconePersonalizado";
 
 function NavBar(props) {
-console.log(props)
+
   const { onMapa } = props;
 
   return (
     <View style={styles.container}>
       <View style={styles.button_container}>
         <Botao name="menu" onPress={() => Alert.alert("Botão de Menu")} />
-        <Botao name="map" onPress={() => onMapa()} />
+        <Botao name="map" onPress={() => onMapa.navigate('Map')} />
       </View>
       <IconePersonalizado onPress={() => Alert.alert("Cardápios da semana")} />
     </View>

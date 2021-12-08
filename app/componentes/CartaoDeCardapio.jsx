@@ -2,7 +2,6 @@ import React from "react";
 import { View, StyleSheet, Text } from "react-native";
 
 import TipoDeComida from "./TipoDeComida";
-import Data from "../Data";
 
 export default function CartaoDeCardapio(props) {
   const { periodo } = props;
@@ -12,7 +11,8 @@ export default function CartaoDeCardapio(props) {
       <View style={styles.text_container}>
         <Text style={styles.text}>{periodo}</Text>
       </View>
-      <TipoDeComida data={Da} />
+      <TipoDeComida />
+      <TipoDeComida />
     </View>
   );
 }

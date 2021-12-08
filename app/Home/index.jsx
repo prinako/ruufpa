@@ -1,12 +1,11 @@
 import React, { useState } from "react";
 import { StyleSheet, View, StatusBar } from "react-native";
 
-import AppHead from "./componentes/AppHead";
-import Dashboard from "./componentes/Dashboard";
-import NavBar from "./componentes/NavBar";
-import Map from "./componentes/mapa/Map";
+import AppHead from "../componentes/AppHead/Head";
+import Dashboard from "../componentes/Dashboard";
+import NavBar from "../componentes/NavBar";
 
-export default function AppContainer() {
+export default function Home({navigation}) {
   const [ mapa, setMapa ] = useState(false);
 
   function controleMapa() {
@@ -15,7 +14,9 @@ export default function AppContainer() {
 
   return (
     <View style={styles.container}>
-      {mapa ? <Map/> : <Dashboard />}
+      <AppHead />
+       <Dashboard />
+      <NavBar onMapa={navigation} />
     </View>
   );
 }
@@ -23,6 +24,5 @@ export default function AppContainer() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
   },
 });

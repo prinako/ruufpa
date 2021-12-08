@@ -1,23 +1,21 @@
 import React from "react";
-import { ScrollView, StyleSheet, FlatList, View } from "react-native";
+import { ScrollView, StyleSheet, StatusBar } from "react-native";
 
 import CartaoDeCardapio from "./CartaoDeCardapio";
 import Separator from "./Separator";
-import TipoDeComida from "./TipoDeComida";
 
-import Data from "../Data";
-console.log(Data)
 
 function Dashboard() {
+
   return (
-    <View>
-      <FlatList data={Data} 
-      renderItem={TipoDeComida}
-      keyExtractor={Data.id}
-      />
-        
+    <ScrollView style={styles.container}>
       <Separator dia="Hoje" />
-    </View>
+      <CartaoDeCardapio periodo="Almoço"/>
+      <CartaoDeCardapio periodo="Jantar"/>
+      <Separator dia="Amanhã" />
+      <CartaoDeCardapio periodo="Almoço"/>
+      <CartaoDeCardapio periodo="Jantar"/>
+    </ScrollView>
   );
 }
 
@@ -25,6 +23,7 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: "#F3F4ED",
     flex: 1,
+    
   },
 });
 
