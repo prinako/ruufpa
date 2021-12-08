@@ -12,7 +12,7 @@ function NavBar(props) {
     <View style={styles.container}>
       <View style={styles.button_container}>
         <Botao name="menu" onPress={() => Alert.alert("Botão de Menu")} />
-        <Botao name="map" onPress={() => onMapa()} />
+        <Botao name="map" onPress={() => onMapa.navigate('Map')} />
       </View>
       <IconePersonalizado onPress={() => Alert.alert("Cardápios da semana")} />
     </View>

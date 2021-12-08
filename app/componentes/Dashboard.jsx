@@ -1,5 +1,5 @@
 import React from "react";
-import { ScrollView, StyleSheet } from "react-native";
+import { ScrollView, StyleSheet, StatusBar } from "react-native";
 
 import CartaoDeCardapio from "./CartaoDeCardapio";
 import Separator from "./Separator";
