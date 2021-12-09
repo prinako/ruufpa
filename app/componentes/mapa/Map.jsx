@@ -7,7 +7,9 @@ import { View, StyleSheet, Dimensions, Text } from "react-native";
 
 import GOOGLE_API_KEY from "../../config";
 
-export default function Map() {
+import NavBar from "../NavBar";
+
+export default function Map( {navigation}) {
   const mapEL = useRef(null);
 
   const [localizacao, setLocalizacao] = useState(null);
@@ -85,6 +87,8 @@ export default function Map() {
           <Text>Distância: {distancia}m</Text>
         </View>
       )}
+      <NavBar onPress={navigation} />
+
     </View>
   );
 }
@@ -98,13 +102,13 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   map: {
+    flex:1,
     width: Dimensions.get("window").width,
-    height: "100%",
   },
   distan: {
     zIndex: 10,
     position: "absolute",
-    bottom: 20,
+    bottom: 80,
     right: 20,
     backgroundColor: "#fff",
     padding: 5,

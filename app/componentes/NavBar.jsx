@@ -6,15 +6,15 @@ import IconePersonalizado from "./icon/IconePersonalizado";
 
 function NavBar(props) {
 
-  const { onMapa } = props;
+  const { onPress } = props;
 
   return (
     <View style={styles.container}>
       <View style={styles.button_container}>
-        <Botao name="menu" onPress={() => Alert.alert("Botão de Menu")} />
-        <Botao name="map" onPress={() => onMapa.navigate('Map')} />
+        <Botao name="menu" onPress={() => onPress.push("Menu")} />
+        <Botao name="map" onPress={() => onPress.push('Mapa')} />
       </View>
-      <IconePersonalizado onPress={() => Alert.alert("Cardápios da semana")} />
+      <IconePersonalizado onPress={() => onPress.push("Home")} />
     </View>
   );
 }
