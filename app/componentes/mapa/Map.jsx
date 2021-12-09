@@ -5,7 +5,7 @@ import MapView, { PROVIDER_GOOGLE } from "react-native-maps";
 import MapViewDirections from "react-native-maps-directions";
 import { View, StyleSheet, Dimensions, Text, Alert } from "react-native";
 
-import GOOGLE_API_KEY from "../../config";
+import GOOGLE_API_KEY from "../../config/Api";
 
 import NavBar from "../NavBar";
 
@@ -57,6 +57,8 @@ export default function Map({ navigation }) {
           style={styles.map}
           initialRegion={localizacao}
           showsUserLocation={true}
+          showsCompass={true}
+          showsMyLocationButton={true}
           zoomEnabled={true}
           loadingEnabled={true}
           provider={PROVIDER_GOOGLE}
@@ -96,7 +98,7 @@ export default function Map({ navigation }) {
           {
             text: "Sim",
             onPress: () => navigation.push("Mapa"),
-            style:"default"
+            style: "default",
           },
         ])
       )}

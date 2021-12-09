@@ -2,7 +2,7 @@
   "expo": {
     "name": "RU  DIGITAL",
     "slug": "ru-digital",
-    "version": "1.0.4",
+    "version": "1.0.5",
     "orientation": "portrait",
     "icon": "./app/assets/ru-digital-logo.png",
     "splash": {
@@ -17,7 +17,8 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.prinako.rudigital"
     },
     "android": {
       "adaptiveIcon": {
@@ -35,7 +36,7 @@
           "apiKey": "AIzaSyDOHk058gQkPQ5tSkfCMrTuVqt1I-3oEHk"
         }
       },
-      "versionCode": 1
+      "versionCode": 2
     },
     "web": {
       "favicon": "./app/assets/ru-digital-logo.png"
