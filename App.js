@@ -1,5 +1,7 @@
+
+
 import React, { useState } from "react";
-import { StyleSheet, StatusBar } from "react-native";
+import { StyleSheet, StatusBar, AppRegistry} from "react-native";
 
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
@@ -65,4 +67,6 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#F3F4ED",
   },
-});
+}
+);
+AppRegistry.registerComponent("App", () => App);
