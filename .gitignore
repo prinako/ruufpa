@@ -16,4 +16,6 @@ web-build/
 
 .vscode/*
 
-app/config/*
+
+
+client_secret.json
