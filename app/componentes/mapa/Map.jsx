@@ -1,13 +1,11 @@
 import React, { useState, useEffect, useRef } from "react";
 import * as Location from "expo-location";
 
-import MapView, { PROVIDER_GOOGLE } from "react-native-maps";
+import MapView, { Marker, PROVIDER_GOOGLE } from "react-native-maps";
 import MapViewDirections from "react-native-maps-directions";
 import { View, StyleSheet, Dimensions, Text, Alert } from "react-native";
 
 import GOOGLE_API_KEY from "../../config/Api";
-
-import NavBar from "../NavBar";
 
 export default function Map({ navigation }) {
   const mapEL = useRef(null);
@@ -56,26 +54,33 @@ export default function Map({ navigation }) {
         <MapView
           style={styles.map}
           initialRegion={localizacao}
+          userLocationUpdateInterval={1}
+          userLocationFastestInterval={1}
           showsUserLocation={true}
+          toolbarEnabled={true}
+          followsUserLocation={true}
           showsCompass={true}
+          showsBuildings={true}
+          userLocationPriority="balanced"
           showsMyLocationButton={true}
           zoomEnabled={true}
           loadingEnabled={true}
           provider={PROVIDER_GOOGLE}
           ref={mapEL}
         >
+          <Marker coordinate={destino} title="Ru UFPA" icon={require("../../assets/ru_logo.png")}/>
           <MapViewDirections
             origin={localizacao}
             destination={destino}
             apikey={GOOGLE_API_KEY.API}
-            lineDashPattern={[52, 2]}
-            lineJoin={"bevel"}
-            resetOnChange={true}
-            strokeWidth={5}
-            optimizeWaypoints={true}
+            lineDashPattern={[0]}
+            timePrecision="now"
+            mode="WALKING"
+            strokeWidth={3}
             language={"pt-br"}
             onReady={(resultado) => {
               setDistancia(resultado.distance);
+              /*console.log(resultado.duration)*/
               mapEL.current.fitToCoordinates(resultado.coordinates, {
                 edgePadding: {
                   top: 50,
@@ -104,10 +109,9 @@ export default function Map({ navigation }) {
       )}
       {distancia && (
         <View style={styles.distan}>
-          <Text>Distância: {distancia}m</Text>
+          <Text>Distância: {distancia} km</Text>
         </View>
       )}
-      {localizacao && <NavBar onPress={navigation} />}
     </View>
   );
 }

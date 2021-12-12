@@ -4,7 +4,7 @@ import { View, StyleSheet, Text } from "react-native";
 import TipoDeComida from "./TipoDeComida";
 
 export default function CartaoDeCardapio(props) {
-  const { periodo } = props;
+  const { periodo, color } = props;
 
   return (
     <View style={styles.container}>

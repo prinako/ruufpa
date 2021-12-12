@@ -2,41 +2,40 @@ import React from "react";
 import { View, Text, StyleSheet, ScrollView, Alert } from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
 
-import NavBar from "../NavBar";
+import Fila from "../fila/Fila";
 
 export default function Menu({ navigation }) {
   return (
     <View style={styles.container}>
-      <ScrollView>
+      <Fila />
+      <ScrollView style={{paddingTop:5}}>
         <View style={styles.menu}>
+          <View style={{ padding: 5, overflow: "hidden" }}>
+            <TouchableOpacity
+              style={styles.buttom}
+              onPress={() => navigation.push("Cardápio Da Semana")}
+            >
+              <Text style={{fontSize:17}}>Cardápio Completo</Text>
+            </TouchableOpacity>
+          </View>
           <View style={{ padding: 5, overflow: "hidden" }}>
             <TouchableOpacity
               style={styles.buttom}
               onPress={() => navigation.push("Histórico")}
             >
-              <Text>Histórico do RU</Text>
+              <Text style={{fontSize:17}}>Histórico do RU</Text>
             </TouchableOpacity>
           </View>
           <View style={{ padding: 5, overflow: "hidden" }}>
             <TouchableOpacity
               style={styles.buttom}
-              onPress={() => Alert.alert("Central do Cardápios")}
+              onPress={() => navigation.push("Feedback")}
             >
-              <Text>Central do Cardápio </Text>
+              <Text style={{fontSize:17}}>Feedback</Text>
             </TouchableOpacity>
           </View>
-          <View style={{ padding: 5, overflow: "hidden" }}>
-            <TouchableOpacity
-              style={styles.buttom}
-              onPress={() => Alert.alert("Facebook")}
-            >
-              <Text>Feedback</Text>
-            </TouchableOpacity>
-          </View>
-          <Text>menu</Text>
         </View>
       </ScrollView>
-      <NavBar onPress={navigation} />
     </View>
   );
 }
@@ -53,7 +52,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     backgroundColor: "#fff",
-    height: 50,
+    height: 80,
     width: "100%",
     borderRadius: 10,
   },

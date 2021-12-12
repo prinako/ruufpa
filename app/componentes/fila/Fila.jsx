@@ -42,7 +42,7 @@ export default function Fila() {
   return (
     <View style={styles.container}>
       <View style={{ alignItems: "center", paddingBottom: 5 }}>
-        <Text>A Fila</Text>
+        <Text>FILA</Text>
       </View>
       <View
         onLayout={(e) => {

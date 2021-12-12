@@ -20,3 +20,5 @@ web-build/
 app/config/*
 
 client_secret.json
+
+app.json

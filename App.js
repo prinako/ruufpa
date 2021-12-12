@@ -12,6 +12,9 @@ import Home from "./app/componentes/Home";
 import Map from "./app/componentes/mapa/Map";
 import Menu from "./app/componentes/menu/Menu";
 import Historico from "./app/componentes/sobleRu/Historico";
+import CardapioCompleto from "./app/componentes/CardapioCompleto/CardapioCompleto";
+import Feedback from "./app/componentes/Feedback/Feedback";
+
 
 const Stack = createNativeStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -19,6 +22,7 @@ const Drawer = createDrawerNavigator();
 
 
 export default function App() {
+  
   return (
     <NavigationContainer style={styles.container}>
       <StatusBar barStyle="dark-content" backgroundColor="#FFCC1D" />
@@ -51,6 +55,24 @@ export default function App() {
        <Stack.Screen
         name="Histórico"
         component={Historico}
+        options={{
+          headerStyle: {
+            backgroundColor: "#FFCC1D",
+          },
+        }}
+      />
+      <Stack.Screen
+        name="Cardápio Da Semana"
+        component={CardapioCompleto}
+        options={{
+          headerStyle: {
+            backgroundColor: "#FFCC1D",
+          },
+        }}
+      />
+      <Stack.Screen
+        name="Feedback"
+        component={Feedback}
         options={{
           headerStyle: {
             backgroundColor: "#FFCC1D",
