@@ -1,15 +1,15 @@
 import React, { useState, useEffect, useRef } from "react";
 import * as Location from "expo-location";
 
-import MapView from "react-native-maps";
+import MapView, { PROVIDER_GOOGLE } from "react-native-maps";
 import MapViewDirections from "react-native-maps-directions";
-import { View, StyleSheet, Dimensions, Text } from "react-native";
+import { View, StyleSheet, Dimensions, Text, Alert } from "react-native";
 
-import GOOGLE_API_KEY from "../../config";
+import GOOGLE_API_KEY from "../../config/Api";
 
 import NavBar from "../NavBar";
 
-export default function Map( {navigation}) {
+export default function Map({ navigation }) {
   const mapEL = useRef(null);
 
   const [localizacao, setLocalizacao] = useState(null);
@@ -42,7 +42,9 @@ export default function Map( {navigation}) {
         if (backgrundStatus === "granted") {
         }*/
       } else {
-        setErrorMsg("A permissão para acessar o local foi negada");
+        setErrorMsg(
+          "A permissão para acessar o localização foi negada. Para usa o mapa precisa de permissão de sua localização.\n \nQuer permite?"
+        );
         return;
       }
     })();
@@ -50,20 +52,24 @@ export default function Map( {navigation}) {
 
   return (
     <View style={styles.container}>
-      <MapView
-        style={styles.map}
-        initialRegion={localizacao}
-        showsUserLocation={true}
-        zoomEnabled={true}
-        loadingEnabled={true}
-        ref={mapEL}
-      >
-        {localizacao && (
+      {localizacao ? (
+        <MapView
+          style={styles.map}
+          initialRegion={localizacao}
+          showsUserLocation={true}
+          showsCompass={true}
+          showsMyLocationButton={true}
+          zoomEnabled={true}
+          loadingEnabled={true}
+          provider={PROVIDER_GOOGLE}
+          ref={mapEL}
+        >
           <MapViewDirections
             origin={localizacao}
             destination={destino}
             apikey={GOOGLE_API_KEY.API}
-            lineDashPattern={[0]}
+            lineDashPattern={[52, 2]}
+            lineJoin={"bevel"}
             resetOnChange={true}
             strokeWidth={5}
             optimizeWaypoints={true}
@@ -80,15 +86,28 @@ export default function Map( {navigation}) {
               });
             }}
           />
-        )}
-      </MapView>
+        </MapView>
+      ) : (
+        erroMsg &&
+        Alert.alert("Permissão", erroMsg, [
+          {
+            text: "Não",
+            onPress: () => navigation.push("Home"),
+            style: "cancel",
+          },
+          {
+            text: "Sim",
+            onPress: () => navigation.push("Mapa"),
+            style: "default",
+          },
+        ])
+      )}
       {distancia && (
         <View style={styles.distan}>
           <Text>Distância: {distancia}m</Text>
         </View>
       )}
-      <NavBar onPress={navigation} />
-
+      {localizacao && <NavBar onPress={navigation} />}
     </View>
   );
 }
@@ -102,7 +121,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   map: {
-    flex:1,
+    flex: 1,
     width: Dimensions.get("window").width,
   },
   distan: {

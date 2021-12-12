@@ -2,7 +2,7 @@
   "expo": {
     "name": "RU  DIGITAL",
     "slug": "ru-digital",
-    "version": "1.0.1",
+    "version": "1.0.5",
     "orientation": "portrait",
     "icon": "./app/assets/ru-digital-logo.png",
     "splash": {
@@ -17,7 +17,8 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.prinako.rudigital"
     },
     "android": {
       "adaptiveIcon": {
@@ -29,7 +30,13 @@
         "ACCESS_FINE_LOCATION",
         "ACESS_BACKGROUND_LOCATION"
       ],
-      "package": "com.ru_digital.rudigital"
+      "package": "com.ru_digital.rudigital",
+      "config": {
+        "googleMaps": {
+          "apiKey": "AIzaSyDOHk058gQkPQ5tSkfCMrTuVqt1I-3oEHk"
+        }
+      },
+      "versionCode": 2
     },
     "web": {
       "favicon": "./app/assets/ru-digital-logo.png"
