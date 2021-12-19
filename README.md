@@ -6,6 +6,7 @@
 ### Bult with
 
 - Reacet Native
+- Expo
 
 ## Author
 
