@@ -1,5 +1,4 @@
 
-
 import React, { useState } from "react";
 import { StyleSheet, StatusBar, AppRegistry} from "react-native";
 

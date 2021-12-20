@@ -3,11 +3,13 @@ import { View, Text, StyleSheet, ScrollView, Alert } from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
 
 import Fila from "../fila/Fila";
+import Slider from "../Ru_foto/Slider";
 
 export default function Menu({ navigation }) {
   return (
     <View style={styles.container}>
       <Fila />
+      <Slider/>
       <ScrollView style={{paddingTop:5}}>
         <View style={styles.menu}>
           <View style={{ padding: 5, overflow: "hidden" }}>

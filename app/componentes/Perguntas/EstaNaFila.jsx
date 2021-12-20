@@ -2,7 +2,7 @@ import React from "react";
 import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 
 export default function EstaNaFila(props) {
-    const {onPress} = props;
+    const {onPressSim, onPressNao, pergunta} = props;
   return (
     <View style={styles.container}>
       <View
@@ -13,13 +13,13 @@ export default function EstaNaFila(props) {
           alignItems: "center",
         }}
       >
-        <Text style={{ color: "#fff" }}>VOCÊ ESTÁ NO RU?</Text>
+        <Text style={{ color: "#fff" }}>{pergunta}</Text>
       </View>
       <View style={styles.container_buttom}>
-        <TouchableOpacity onPress={onPress} style={styles.botao}>
+        <TouchableOpacity onPress={onPressSim} style={styles.botao}>
           <Text style={styles.text}>Sim</Text>
         </TouchableOpacity>
-        <TouchableOpacity onPress={onPress} style={styles.botao}>
+        <TouchableOpacity onPress={onPressNao} style={styles.botao}>
           <Text style={styles.text}>Não</Text>
         </TouchableOpacity>
       </View>
