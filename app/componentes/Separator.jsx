@@ -19,7 +19,7 @@ const styles = StyleSheet.create({
   },
   separator: {
     width: "100%",
-    marginVertical: 30,
+    marginVertical: 22,
     borderBottomColor: "#737373",
     borderBottomWidth: StyleSheet.hairlineWidth,
   },

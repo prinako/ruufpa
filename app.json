@@ -1,8 +1,8 @@
 {
   "expo": {
-    "name": "RU  DIGITAL",
+    "name": "RU DIGITAL",
     "slug": "ru-digital",
-    "version": "1.0.5",
+    "version": "1.0.10",
     "orientation": "portrait",
     "icon": "./app/assets/ru-digital-logo.png",
     "splash": {
@@ -18,7 +18,7 @@
     ],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.prinako.rudigital"
+      "bundleIdentifier": "com.rudigital"
     },
     "android": {
       "adaptiveIcon": {
@@ -28,15 +28,17 @@
       "permissions": [
         "ACCESS_COARSE_LOCATION",
         "ACCESS_FINE_LOCATION",
-        "ACESS_BACKGROUND_LOCATION"
+        "ACESS_BACKGROUND_LOCATION",
+        "READ_EXTERNAL_STORAGE",
+        "WRITE_EXTERNAL_STORAGE"
       ],
-      "package": "com.ru_digital.rudigital",
+      "package": "com.rudigital",
       "config": {
         "googleMaps": {
-          "apiKey": "AIzaSyDOHk058gQkPQ5tSkfCMrTuVqt1I-3oEHk"
+          "apiKey": "AIzaSyAI86gVmKibHe8W4ZPTA5Wy0cs"
         }
       },
-      "versionCode": 2
+      "versionCode": 9
     },
     "web": {
       "favicon": "./app/assets/ru-digital-logo.png"

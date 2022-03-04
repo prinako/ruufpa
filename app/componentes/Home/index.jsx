@@ -5,7 +5,10 @@ import Head from "../AppHead/Head";
 import Dashboard from "../Dashboard";
 import EstaNaFila from "../Perguntas/EstaNaFila";
 import NavBar from "../NavBar";
+import Noticia from "../Noticias/Noticias"
 
+/** aqui nós botamos todos tabelas da tela inicial para renderizar na
+ * tela inicial */
 export default function Home({ navigation }) {
   const [respo, setRospo] = useState(true);
   const [estaNaFila, setEstaNaFila] = useState(false);
@@ -36,8 +39,11 @@ export default function Home({ navigation }) {
   }
 
   return (
+    /** renderizamos as perguntas e Cardapios do dia*/
     <View style={styles.container}>
       <Head />
+      <Noticia/>
+      {/** 
       {respo && (
         <EstaNaFila
           onPressSim={handleOnPress}
@@ -58,7 +64,7 @@ export default function Home({ navigation }) {
           onPressNao={handleEstaNaFila}
           pergunta="VOCÊ VAI PARA RU HOJE"
         />
-      )}
+      )} */}
       <Dashboard />
       <NavBar onPress={navigation} />
     </View>

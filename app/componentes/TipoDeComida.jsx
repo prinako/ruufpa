@@ -4,6 +4,12 @@ import { Text, View, StyleSheet, Image } from "react-native";
 function TipoDeComida() {
   return (
     <View style={styles.container}>
+      <View style={styles.image_container}>
+        <Image
+          style={styles.image}
+          source={require("../imagems/comida1.jpg")}
+        />
+      </View>
       <View style={styles.text_container}>
         <View style={styles.titilo_do_cardapio}>
           <Text style={{ fontWeight: "bold" }}>LINGUIÇA ASSADA</Text>

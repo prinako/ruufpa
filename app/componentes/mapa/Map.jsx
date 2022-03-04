@@ -68,7 +68,7 @@ export default function Map({ navigation }) {
           provider={PROVIDER_GOOGLE}
           ref={mapEL}
         >
-          <Marker coordinate={destino} title="Ru UFPA" icon={require("../../assets/ru_logo.png")}/>
+          <Marker coordinate={destino} title="RU UFPA" />
           <MapViewDirections
             origin={localizacao}
             destination={destino}

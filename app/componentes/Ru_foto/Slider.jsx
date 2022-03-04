@@ -37,7 +37,6 @@ export default function Slider() {
   const [show, setShow] = useState(false);
 
   const renderItem = (data) => {
-    console.log(data);
     return (
       <View key={data.image} style={styles.slide}>
         <Image style={styles.image} source={data.image} />

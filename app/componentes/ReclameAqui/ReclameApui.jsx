@@ -1,3 +1,4 @@
+/** Aqui são bibiliteca do React */
 import React, { useState } from "react";
 import {
   View,
@@ -6,11 +7,15 @@ import {
   TextInput,
   TouchableHighlight,
   Alert,
+  ScrollView,
 } from "react-native";
 
-export default function Feefback({ navigation }) {
+/** Funcão para o fumolario   */
+export default function ReclameAqui({ navigation }) {
   const [nome, setNome] = useState("");
   const [email, setEmail] = useState("");
+  const [curso, setCurso] = useState("");
+  const [setor, setSetor] = useState("");
   const [msg, setMsg] = useState("");
 
   //Verificação
@@ -20,9 +25,19 @@ export default function Feefback({ navigation }) {
       Alert.alert("Alerta", "Por favor, digite seu nome");
       return;
     }
+    //Verifique o E-mail TextInput
+    if (!email.trim()) {
+      Alert.alert("Alerta", "Por favor, digite seu e-mail");
+      return;
+    }
+
+    if (!setor.trim()) {
+      Alert.alert("Alerta", "Por favor, digite o Unidade. EX: Básico");
+      return;
+    }
 
     if (!msg.trim()) {
-      Alert.alert("Alerta", "Por favor, digite seu Comentário.");
+      Alert.alert("Alerta", "Por favor, digite seu comentário.");
       return;
     }
 
@@ -31,30 +46,31 @@ export default function Feefback({ navigation }) {
   };
 
   async function handelOnSend() {
-    const feedback = {
+    const reclama = {
       nome: nome,
       email: email,
+      curso: curso,
+      setor: setor,
       msg: msg,
     };
     try {
-      const resp = await fetch("https://ru-digital.herokuapp.com/feedback", {
+      const resp = await fetch("https://ru-digital.herokuapp.com/reclamaaqui", {
         method: "POST",
         headers: {
           Accept: "application/json",
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(feedback),
+        body: JSON.stringify(reclama),
       }).then((respon) => JSON.stringify(respon));
 
       const p = await JSON.parse(resp);
-
       if (p.status === 404) {
         return Alert.alert(
           "Erro",
-          "Não foi possível concluir sua avaliação, tente novamente"
+          "Não foi possível concluir sua reclamação, tente novamente"
         );
       }
-      Alert.alert("Sucesso", "Obrigado por sua avaliação", [
+      Alert.alert("Sucesso", "Obrigado por sua reclamação", [
         {
           text: "Ok",
           onPress: () => navigation.goBack(),
@@ -62,9 +78,10 @@ export default function Feefback({ navigation }) {
       ]);
     } catch (e) {}
   }
+
   return (
     <View style={styles.container}>
-      <View
+      <ScrollView
         style={{
           backgroundColor: "#C8C6C6",
           flex: 1,
@@ -83,8 +100,8 @@ export default function Feefback({ navigation }) {
               borderRadius: 10,
             }}
           >
-            <Text style={{ fontSize: 19.8, fontWeight: "bold" }}>
-              Deixe sua Avaliação
+            <Text style={{ fontSize: 19.8, fontWeight: "600" }}>
+              Deixe Sua Reclamação
             </Text>
           </View>
         </View>
@@ -102,11 +119,25 @@ export default function Feefback({ navigation }) {
             onChangeText={(e) => setEmail(e)}
             keyboardType="email-address"
             autoComplete="email"
-            placeholder="exemplo@gmail.com (opcional)"
+            placeholder="exemplo@gmail.com"
           />
         </View>
         <View style={{ marginTop: 25 }}>
-          <Text style={{ fontSize: 18 }}>Seu comentário:</Text>
+          <TextInput
+            style={styles.text_iput}
+            onChangeText={(e) => setCurso(e)}
+            placeholder="Seu Curso (opcional)"
+          />
+        </View>
+        <View style={{ marginTop: 25 }}>
+          <TextInput
+            style={styles.text_iput}
+            onChangeText={(e) => setSetor(e)}
+            placeholder="Qual Unidade. EX: Básico"
+          />
+        </View>
+        <View style={{ marginTop: 25 }}>
+          <Text style={{ fontSize: 18 }}>Seu Comentário:</Text>
           <TextInput
             style={styles.comentario}
             onChangeText={(e) => setMsg(e)}
@@ -140,7 +171,7 @@ export default function Feefback({ navigation }) {
             </TouchableHighlight>
           </View>
         </View>
-      </View>
+      </ScrollView>
     </View>
   );
 }

@@ -17,8 +17,8 @@ web-build/
 .vscode/*
 
 
-app/config/*
+
 
 client_secret.json
 
-app.json
+ru-digital.json

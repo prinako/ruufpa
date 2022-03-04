@@ -7,9 +7,20 @@
     "preview": {
       "distribution": "internal"
     },
-    "production": {}
+    "production": {
+      
+    }
   },
   "cli": {
     "version": ">= 0.39.0"
+  },
+  "submit": {
+    "production": {
+      "android": {
+        "serviceAccountKeyPath": "./ru-digital.json",
+        "track": "internal"
+      }
+      
+    }
   }
 }

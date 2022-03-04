@@ -17,7 +17,7 @@ export default function Histórico() {
           </Text>
         </View>
         <View style={{ paddingLeft: 10, paddingRight: 10, paddingBottom: 20}}>
-          <Text style={{}} allowFontScaling={true}>
+          <Text style={{textAlign:"justify", lineHeight:20, fontSize:16}} allowFontScaling={true}>
             O Restaurante Universitário da UFPA foi inaugurado em 01 de outubro
             de 1993, e iniciou suas atividades em 13 de outubro do mesmo ano,
             com sua estrutura física projetada para o atendimento de até 1.200
